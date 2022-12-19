@@ -34,9 +34,8 @@ class SubscriptionsViewSet(viewsets.GenericViewSet):
             request.user.subscriptions.remove(subscribed)
             return Response(status=status.HTTP_204_NO_CONTENT)
         if request.user.subscriptions.filter(id=subscribed.id).exists():
-            raise validators.ValidationError(
-                _('The subscription already exists.')
-            )
+            Response(status=status.HTTP_204_NO_CONTENT)
+
         request.user.subscriptions.add(subscribed)
         serializer = self.get_serializer(instance=subscribed)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
