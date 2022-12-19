@@ -1,11 +1,10 @@
 ''' Serializers for 'recipes' API application. '''
-from django.utils.translation import gettext_lazy as _
-from rest_framework import serializers
-from rest_framework.validators import ValidationError
-
 from api import fields, mixins
 from api.users.serializers import UserSerializer
+from django.utils.translation import gettext_lazy as _
 from recipes.models import Ingredient, Recipe, RecipeIngredient, RecipeTag, Tag
+from rest_framework import serializers
+from rest_framework.validators import ValidationError
 
 
 class TagSerializer(serializers.ModelSerializer):
@@ -28,13 +27,6 @@ class RecipeTagSerializer(serializers.ModelSerializer):
         model = RecipeTag
         fields = ('id', 'name', 'color', 'slug')
 
-    def to_internal_value(self, data):
-        data = super().to_internal_value({'id': data})
-        try:
-            return Tag.objects.get(id=data['tag']['id'])
-        except Tag.DoesNotExist:
-            raise ValidationError(_('Invalid data. No such tag.'))
-
 
 class IngredientSerializer(serializers.ModelSerializer):
     ''' Serializer class for :model:'recipes.Ingredient'. '''
@@ -56,14 +48,6 @@ class RecipeIngredientSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeIngredient
         fields = ('id', 'name', 'measurement_unit', 'amount')
-
-    def to_internal_value(self, data):
-        data = super().to_internal_value(data)
-        try:
-            ingredient = Ingredient.objects.get(id=data['ingredient']['id'])
-        except Ingredient.DoesNotExist:
-            raise ValidationError(_('Invalid data. No such tag.'))
-        return ingredient, data['amount']
 
 
 class RecipeSerializer(

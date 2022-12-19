@@ -1,7 +1,7 @@
 ''' Class based forms for 'users' application. '''
 
-from core.widgets import PasswordInput
 from django import forms
+from core.widgets import PasswordInput
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
