@@ -1,10 +1,12 @@
 ''' Serializers for 'recipes' API application. '''
-from api import fields, mixins
-from api.users.serializers import UserSerializer
+
 from django.utils.translation import gettext_lazy as _
-from recipes.models import Ingredient, Recipe, RecipeIngredient, RecipeTag, Tag
 from rest_framework import serializers
 from rest_framework.validators import ValidationError
+
+from recipes.models import Ingredient, Recipe, RecipeIngredient, RecipeTag, Tag
+from api import fields, mixins
+from api.users.serializers import UserSerializer
 
 
 class TagSerializer(serializers.ModelSerializer):

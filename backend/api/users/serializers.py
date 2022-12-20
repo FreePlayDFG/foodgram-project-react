@@ -1,8 +1,10 @@
 ''' Serializers classes for 'users' API application. '''
 
-from api import mixins
+
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
+
+from api import mixins
 
 User = get_user_model()
 

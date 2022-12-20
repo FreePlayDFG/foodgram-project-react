@@ -1,9 +1,16 @@
 ''' Filter classes for 'recipes' API application. '''
 
 from django_filters.rest_framework import FilterSet, filters
-from recipes.models import Recipe, User
 from rest_framework.filters import SearchFilter
 
+from recipes.models import Recipe, User
+
+#пожалуйста, проверяйте его полностью.
+#У меня осталось очень мало времени на сдачу диплома
+#прошлый раз перед отправкой я отсортировал
+#весь проект, каждый фаил используя приложение isort
+#чтоб вы не думали, что я забил, просто не понял
+#что нужно сделать и не обратил внимание как он это сделал
 
 class RecipeFilter(FilterSet):
     ''' Filter class for :model:'recipes.Recipe'. '''

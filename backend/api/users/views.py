@@ -1,13 +1,13 @@
 ''' Views for 'users' API application. '''
 
-from api.recipes.serializers import UserSubscriptionSerializer
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.utils.translation import gettext_lazy as _
-from rest_framework import status, validators, viewsets
+from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
+from api.recipes.serializers import UserSubscriptionSerializer
 
 class SubscriptionsViewSet(viewsets.GenericViewSet):
     ''' ViewSet for user subscription actions. '''
@@ -34,7 +34,7 @@ class SubscriptionsViewSet(viewsets.GenericViewSet):
             request.user.subscriptions.remove(subscribed)
             return Response(status=status.HTTP_204_NO_CONTENT)
         if request.user.subscriptions.filter(id=subscribed.id).exists():
-            raise Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(status=status.HTTP_201_CREATED)
         request.user.subscriptions.add(subscribed)
         serializer = self.get_serializer(instance=subscribed)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
