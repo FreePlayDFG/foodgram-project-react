@@ -18,10 +18,10 @@ services:
       - ../.env
   frontend:
     build:
-      context: ./frontend
+      context: ../frontend
       dockerfile: Dockerfile
     volumes:
-      - ./frontend/:/backend/result_build/
+      - ../frontend/:/backend/result_build/
   nginx:
     image: nginx:1.19.3
     ports:
