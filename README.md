@@ -105,3 +105,4 @@ sudo docker-compose up -d --build
 - **Gunicorn**,
 - **Git**, 
 - Аутентификация реализована с помощью **токена**.
+.
