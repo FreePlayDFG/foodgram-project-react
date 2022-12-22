@@ -5,7 +5,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ../.env
+      - ./.env
   backend:
     image: darkdfg/foodgram:v1.0
     volumes:
@@ -15,13 +15,13 @@ services:
     depends_on:
       - db
     env_file:
-      - ../.env
+      - ./.env
   frontend:
     build:
-      context: ../frontend
+      context: ․/foodgram-project-react/frontend
       dockerfile: Dockerfile
     volumes:
-      - ../frontend/:/backend/result_build/
+      - ․/foodgram-project-react/frontend:/backend/result_build/
   nginx:
     image: nginx:1.19.3
     ports:
