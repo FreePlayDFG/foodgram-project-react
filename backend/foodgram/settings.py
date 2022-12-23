@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'SECRET_KEY')
 
 DEBUG = bool(os.environ.get('DEBUG'))
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(', ')
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'users.User'
 
