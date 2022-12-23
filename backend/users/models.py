@@ -1,4 +1,4 @@
-''' Database entry models for 'users' application. '''
+''' Database entry models for 'users' application.. '''
 
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
