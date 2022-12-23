@@ -1,4 +1,4 @@
-''' Project django settings.. '''
+''' Project django settings. '''
 
 import os
 
