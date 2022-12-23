@@ -1,4 +1,4 @@
-''' Permissions classes for API. '''
+''' Permissions classes for API.. '''
 
 from django.utils.translation import gettext_lazy as _
 from rest_framework.permissions import SAFE_METHODS, BasePermission
