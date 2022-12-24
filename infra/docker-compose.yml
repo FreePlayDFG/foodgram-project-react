@@ -12,7 +12,7 @@ services:
     volumes:
       - static_value:/backend/static/
       - media_value:/backend/media/
-      - foodgram-project-react/docs:/backend/api/docs/
+      - ./foodgram-project-react/docs/:/backend/api/docs/
     depends_on:
       - db
     env_file:
