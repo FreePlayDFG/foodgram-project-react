@@ -107,10 +107,10 @@ LOCALE_PATHS = [
 ]
 STATIC_URL = '/staticfiles/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'core/static/'),
-    os.path.join(BASE_DIR, 'api/docs/'),
-)
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'core/static/'),
+#    os.path.join(BASE_DIR, 'api/docs/'),
+#)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles/')
 MEDIA_URL = '/mediafiles/'
