@@ -107,13 +107,10 @@ LOCALE_PATHS = [
 ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'statiс/')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'core/static/'),
-    os.path.join(BASE_DIR, 'api/docs/'),
-)
+STATIC_ROOT = os.path.join(BASE_DIR, 'statiс')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
