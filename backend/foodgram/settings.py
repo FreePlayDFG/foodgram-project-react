@@ -106,15 +106,15 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'core/locale'),
 ]
 
-STATIC_URL = '/staticfiles/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'statiс/')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'core/static/'),
     os.path.join(BASE_DIR, 'api/docs/'),
 )
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles/')
-MEDIA_URL = '/mediafiles/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',),
