@@ -4836,6 +4836,10 @@
         "measurement_unit": "ч. л."
     },
     {
+        "name": "пекарский порошок",
+        "measurement_unit": "ч. л."
+    },
+    {
         "name": "пармезан",
         "measurement_unit": "г"
     },
@@ -4894,10 +4898,6 @@
     {
         "name": "пекарский порошок",
         "measurement_unit": "г"
-    },
-    {
-        "name": "пекарский порошок",
-        "measurement_unit": "ч. л."
     },
     {
         "name": "пекорино",
