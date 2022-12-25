@@ -30,8 +30,8 @@ services:
       - ./foodgram-project-react/frontend/build/:/usr/share/nginx/html/
       - ./foodgram-project-react/docs/redoc.html:/usr/share/nginx/html/api/docs/redoc.html
       - ./foodgram-project-react/docs/:/usr/share/nginx/html/api/docs/
-      - static_value:/usr/share/nginx/html/static/
-      - media_value:/usr/share/nginx/html/media/
+      - static_value:/var/html/static/
+      - media_value:/var/html/media/
     depends_on:
         - frontend
         - backend
