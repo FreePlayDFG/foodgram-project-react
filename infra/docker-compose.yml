@@ -10,8 +10,8 @@ services:
   backend:
     image: darkdfg/foodgram_backend:latest
     volumes:
-      - static_value:/backend/static/
-      - media_value:/backend/media/
+      - static_value:/backend/staticfiles/static/
+      - media_value:/backend/staticfiles/media/
       - ./foodgram-project-react/docs/:/backend/api/docs/
     depends_on:
       - db
