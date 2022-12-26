@@ -28,7 +28,13 @@ class RecipeTagSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeTag
         fields = ('id', 'name', 'color', 'slug')
-
+    
+    def to_internal_value(self, data):
+        data = super().to_internal_value({'id': data})
+        try:
+            return Tag.objects.get(id=data['tag']['id'])
+        except Tag.DoesNotExist:
+            raise ValidationError(_('Invalid data. No such tag.'))
 
 class IngredientSerializer(serializers.ModelSerializer):
     ''' Serializer class for :model:'recipes.Ingredient'. '''
@@ -50,6 +56,14 @@ class RecipeIngredientSerializer(serializers.ModelSerializer):
     class Meta:
         model = RecipeIngredient
         fields = ('id', 'name', 'measurement_unit', 'amount')
+
+    def to_internal_value(self, data):
+        data = super().to_internal_value(data)
+        try:
+            ingredient = Ingredient.objects.get(id=data['ingredient']['id'])
+        except Ingredient.DoesNotExist:
+            raise ValidationError(_('Invalid data. No such tag.'))
+        return ingredient, data['amount'] 
 
 
 class RecipeSerializer(
